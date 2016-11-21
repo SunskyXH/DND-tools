@@ -8,7 +8,7 @@
     "lint:msg": "validate-commit-msg",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --devtool eval --progress --hot --content-base app",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 8080 --devtool eval --progress --hot --content-base app",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "deploy-windows": "SET NODE_ENV=production & webpack -p --config webpack.production.config.js",
     "validate": "npm ls",
@@ -19,6 +19,7 @@
     "antd-mobile": "^0.9.9",
     "babel-plugin-import": "^1.1.0",
     "babel-runtime": "6.x",
+    "rc-form": "^1.0.1",
     "react": "15.x",
     "react-dom": "15.x"
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavBar, Card, WingBlank, WhiteSpace, Icon } from 'antd-mobile';
 
 export default class Query extends React.Component {
   constructor(props) {
@@ -7,7 +8,9 @@ export default class Query extends React.Component {
   }
   render () {
     return (
-      <h1>Query</h1>
+      <div>
+        <NavBar mode='dark' iconName="">Query</NavBar>
+      </div>
     )
   }
 }

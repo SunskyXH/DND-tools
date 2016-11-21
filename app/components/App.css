@@ -2,5 +2,9 @@
 .am-tab-bar,
 .am-tab-bar-content,
 .am-tab-bar-tabpane {
-  height: 100%;
+
+}
+.popup-list .am-list-body {
+  height: 420px;
+  overflow: auto;
 }

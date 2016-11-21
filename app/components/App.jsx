@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabBar } from 'antd-mobile';
+import { TabBar, Icon } from 'antd-mobile';
 import BuildCard from './BuildCard';
 import Cards from './Cards';
 import Query from './Query';
@@ -21,14 +21,14 @@ export default class App extends React.Component {
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
-        barTintColor="black"
+        barTintColor="white"
         hidden={this.state.hidden}
       >
         <TabBar.Item
-          title="建卡"
-          key="建卡"
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="Cards"
+          key="Cards"
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/EljxLrJEShWZObW.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/LWNaMdwAFSmYBFw.png' }}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => {
             this.setState({
@@ -37,13 +37,13 @@ export default class App extends React.Component {
           }}
           data-seed="logId"
         >
-        <Cards />
+        <Cards/>
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
-          title="查询"
-          key="查询"
+          title="Query"
+          key="Query"
           selected={this.state.selectedTab === 'redTab'}
           onPress={() => {
             this.setState({
@@ -55,24 +55,10 @@ export default class App extends React.Component {
         <Query />
         </TabBar.Item>
         <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/EljxLrJEShWZObW.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/LWNaMdwAFSmYBFw.png' }}
-          title="哇哦"
-          key="哇哦"
-          selected={this.state.selectedTab === 'greenTab'}
-          onPress={() => {
-            this.setState({
-              selectedTab: 'greenTab',
-            });
-          }}
-        >
-        <Cards />
-        </TabBar.Item>
-        <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/WadBBxOIZtDzsgP.png' }}
-          title="骰子"
-          key="骰子"
+          title="Dice"
+          key="Dice"
           selected={this.state.selectedTab === 'yellowTab'}
           onPress={() => {
             this.setState({
