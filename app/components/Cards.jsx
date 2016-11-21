@@ -5,10 +5,12 @@ const cards = [
   {
     "name": "皮皮猪",
     "profession":"圣武士",
+    "race": "人类",
     "level": "1"
   },{
     "name": "皮皮猪二号",
     "profession":"战士",
+    "race":"人类",
     "level": "1"
   }
 ]
@@ -37,10 +39,10 @@ export default class Cards extends React.Component {
               <Card >
                 <Card.Header
                   title={card.name}
-                  extra={<span>{card.profession}</span>}
+                  extra={<span>等级:{card.level}</span>}
                 />
                 <Card.Body>
-                  <div><Icon type="user" />等级:{card.level}</div>
+                  <div><Icon type="user" />{card.profession}/{card.race}</div>
                 </Card.Body>
                 <Card.Footer content="" extra={<Icon type="ellipsis" />} />
               </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Card, WingBlank, WhiteSpace, Icon, List, InputItem, Popup } from 'antd-mobile';
+import { NavBar, Card, WingBlank, WhiteSpace, Icon, List, InputItem, Popup, Stepper,Button } from 'antd-mobile';
 import { browserHistory } from 'react-router';
 import { createForm } from 'rc-form';
 const Item = List.Item;
@@ -16,15 +16,20 @@ if (isIPhone) {
 class BuildCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { profession:'' };
+    this.state = {
+      profession:'',
+      race:'',
+    };
     this.goBack = this.goBack.bind(this);
-    this.chooseProfesstion = this.chooseProfesstion.bind(this);
-    this.onCloseProfession = this.onCloseProfession.bind(this)
+    this.chooseProfession = this.chooseProfession.bind(this);
+    this.onCloseProfession = this.onCloseProfession.bind(this);
+    this.chooseRace = this.chooseRace.bind(this);
+    this.onCloseRace = this.onCloseRace.bind(this);
   }
   goBack () {
     browserHistory.push('/');
   }
-  chooseProfesstion () {
+  chooseProfession () {
     Popup.show(<div>
       <List renderHeader={() => (
         <div style={{ position: 'relative' }}>
@@ -50,6 +55,32 @@ class BuildCard extends React.Component {
     this.setState({ profession });
     Popup.hide();
   }
+  chooseRace () {
+    Popup.show(<div>
+      <List renderHeader={() => (
+        <div style={{ position: 'relative' }}>
+          选择种族
+          <span
+            style={{
+              position: 'absolute', right: 3, top: -5,
+            }}
+            onClick={() => this.onCloseRace('')}
+          >
+            <Icon type="cross" />
+          </span>
+        </div>)}
+        className="popup-list"
+      >
+        {['人类', '精灵', '半身人', '兽人', '半兽人'].map((race, index) => (
+          <List.Item key={index} onClick={() => this.onCloseRace(race) }>{race}</List.Item>
+        ))}
+      </List>
+    </div>, { animationType: 'slide-up', wrapProps });
+  }
+  onCloseRace(race) {
+    this.setState({ race });
+    Popup.hide();
+  }
   render () {
     const { getFieldProps } = this.props.form;
     return (
@@ -66,12 +97,25 @@ class BuildCard extends React.Component {
               placeholder="名称"
               >人物名称</InputItem>
             <Item
-              {...getFieldProps('name')}
+              {...getFieldProps('profession')}
               extra={this.state.profession}
               arrow="horizontal"
-              onClick={this.chooseProfesstion}
+              onClick={this.chooseProfession}
               >职业</Item>
+              <Item
+                {...getFieldProps('race')}
+                extra={this.state.race}
+                arrow="horizontal"
+                onClick={this.chooseRace}
+                >种族</Item>
+              <Item
+                {...getFieldProps('level')}
+                extra={<Stepper showNumber size="small" min={0} defaultValue={1} />}
+                >初始等级</Item>
         </List>
+        <div style={{ margin: '32px 8px' }}>
+        <Button type="primary" >确认</Button>
+      </div>
       </div>
 
     )
