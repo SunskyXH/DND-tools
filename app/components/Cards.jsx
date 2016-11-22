@@ -20,9 +20,13 @@ export default class Cards extends React.Component {
     super(props);
     this.state = {};
     this.addCard = this.addCard.bind(this);
+    this.showDetail = this.showDetail.bind(this);
   }
   addCard () {
     browserHistory.push('/buildcard');
+  }
+  showDetail () {
+    browserHistory.push('/carddetail');
   }
   render () {
     return(
@@ -44,7 +48,7 @@ export default class Cards extends React.Component {
                 <Card.Body>
                   <div><Icon type="user" />{card.profession}/{card.race}</div>
                 </Card.Body>
-                <Card.Footer content="" extra={<Icon type="ellipsis" />} />
+                <Card.Footer content="" extra={<Icon type="ellipsis" onClick={this.showDetail} />} />
               </Card>
               <WhiteSpace size="lg" />
             </div>

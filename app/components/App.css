@@ -8,3 +8,9 @@
   height: 420px;
   overflow: auto;
 }
+
+.myCard {
+  border-radius: 4px;
+  border: white 1px solid ;
+  background: white;
+}
