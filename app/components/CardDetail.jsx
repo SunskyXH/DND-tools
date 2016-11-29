@@ -1,26 +1,24 @@
 import React from 'react';
 import { NavBar, Card, WingBlank, WhiteSpace, Icon } from 'antd-mobile';
 import { browserHistory } from 'react-router'
-import { RadialBarChart, RadialBar, Legend } from 'Recharts';
+import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis } from 'Recharts';
 const prop = [
-  { name:'STR', value:13, fill: '#8884d8' },
-  { name:'DEX', value:11, fill: '#83a6ed' },
-  { name:'INS', value:10, fill: '#8dd1e1' },
-  { name:'WIZ', value:10, fill: '#82ca9d' },
-  { name:'CON', value:12, fill: '#a4de6c' },
-  { name:'CHA', value:12, fill: '#d0ed57' },
+  { name:'STR', value:13 },
+  { name:'DEX', value:11 },
+  { name:'CON', value:12 },
+  { name:'INT', value:10 },
+  { name:'WIS', value:10 },
+  { name:'CHA', value:12 },
 ];
-const style = {
-  	top: 0,
-  	left: 350,
-  };
 const PropChart = React.createClass({
 	render () {
   	return (
-      <RadialBarChart width={500} height={300} cx={150} cy={200} innerRadius={20} outerRadius={140} barSize={15} data={prop}>
-        <RadialBar minAngle={15} label background clockWise={true} dataKey='value'/>
-        <Legend iconSize={20} width={120} height={300} layout='vertical' verticalAlign='middle' wrapperStyle={style} />
-      </RadialBarChart>
+        <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={prop} >
+          <Radar name="name" dataKey="value" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6}  label={true} />
+          <PolarGrid />
+          <PolarAngleAxis dataKey="name"  />
+          <PolarRadiusAxis tick={false}/>
+        </RadarChart>
     );
   }
 })
@@ -28,7 +26,11 @@ const card = {
   "name":"皮皮猪",
   "race":"人类",
   "profession":"圣武士",
-  "level":1
+  "level":1,
+  "gander":"男",
+  "ac":18,
+  "bab":1,
+  "character":"守序善良"
 }
 export default class CardDetail extends React.Component {
   constructor(props) {
@@ -47,18 +49,15 @@ export default class CardDetail extends React.Component {
           leftContent="Cards"
           onLeftClick={this.goBack}
           >CardDetail</NavBar>
-        <WhiteSpace size="lg" />
-        <WingBlank size="lg">
         <div className="myCard">
           <WingBlank size="lg">
           <p><Icon type='user' /> 名字:{card.name}</p>
-          <p><Icon type='smile' /> 职业:{card.profession}</p>
-          <p><Icon type="smile-circle" /> 种族:{card.race}</p>
-          <p><Icon type="tag" /> LV:{card.level}</p>
+          <p><Icon type='smile' /> 职业:{card.profession}/{card.character}</p>
+          <p><Icon type="smile-circle" /> 种族:{card.race}/{card.gander}</p>
           <PropChart />
+          <p><Icon type="tag" /> LV:{card.level} | AC:{card.ac} | BAB:{card.bab}</p>
           </WingBlank>
         </div>
-      </WingBlank>
       </div>
     )
   }

@@ -36,7 +36,7 @@ export default class Cards extends React.Component {
           iconName=""
           rightContent={<Icon type="plus" onClick={this.addCard}/>}
         >Cards</NavBar>
-        <WingBlank size="lg">
+
           <WhiteSpace size="lg" />
           {cards.map((card,k) =>
             <div key={k}>
@@ -53,7 +53,7 @@ export default class Cards extends React.Component {
               <WhiteSpace size="lg" />
             </div>
           )}
-        </WingBlank>
+        
       </div>
 
     )
