@@ -22,7 +22,7 @@ class More extends Component {
         icon: 'grain'
       }
     ]
-    const { toggleSideMenu } = this.props
+
     return (
       <ScrollView style={styles.mainContainer}>
         <View style={styles.headingContainer}>
@@ -64,7 +64,7 @@ styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: colors.secondary2
+    backgroundColor: '#dd4b39'
   },
   titleContainer: {
   },

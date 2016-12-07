@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { StyleSheet, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from 'HSColors'
+import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
 
-import Home from './home/HomeNav'
+import Card from './card/CardNav'
 import Query from './query/QueryNav'
 import More from './more/MoreNav'
 
@@ -16,7 +17,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      selectedTab: 'home'
+      selectedTab: 'Card'
     }
     this.changeTab = this.changeTab.bind(this)
   }
@@ -33,12 +34,12 @@ class App extends Component {
         <Tab
           titleStyle={[styles.titleStyle]}
           selectedTitleStyle={[styles.titleSelected, {marginTop: -3, marginBottom: 7}]}
-          selected={selectedTab === 'home'}
-          title={selectedTab === 'home' ? 'Card' : null}
+          selected={selectedTab === 'Card'}
+          title={selectedTab === 'Card' ? 'Card' : null}
           renderIcon={() => <Icon color={colors.grey2} name='change-history' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='change-history' size={26} />}
-          onPress={() => this.changeTab('home')}>
-          <Home toggleSideMenu={toggleSideMenu} />
+          onPress={() => this.changeTab('Card')}>
+          <Card toggleSideMenu={toggleSideMenu} backgroundColor={ colors.primary2 } />
         </Tab>
         <Tab
           titleStyle={[styles.titleStyle]}
@@ -48,7 +49,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='code' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='code' size={26} />}
           onPress={() => this.changeTab('query')}>
-          <Query toggleSideMenu={toggleSideMenu} />
+          <Query toggleSideMenu={toggleSideMenu} backgroundColor={'#dd4b39'} />
         </Tab>
         <Tab
           titleStyle={[styles.titleStyle]}
@@ -58,7 +59,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='looks' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='looks' size={26} />}
           onPress={() => this.changeTab('more')}>
-          <More toggleSideMenu={toggleSideMenu} />
+          <More toggleSideMenu={toggleSideMenu} backgroundColor={ socialColors.vimeo} />
         </Tab>
       </Tabs>
     )

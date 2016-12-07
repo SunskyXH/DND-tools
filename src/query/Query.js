@@ -9,32 +9,34 @@ import {
   Text,
   Button,
   List,
-  ListItem
+  ListItem,
+  SearchBar,
 } from 'react-native-elements'
 
 let styles = {}
 
 class Query extends Component {
+  constructor () {
+    super()
+    this.state = {
+    }
+    this.serach = this.serach.bind(this)
+  }
+  serach () {
+    console.log('1')
+  }
   render () {
-    const list = [
-      {
-        name: '香香鸡',
-        icon: 'code',
-        subtitle: 'Paladin'
-      },{
-        name: '香香鸡2',
-        icon: 'code',
-        subtitle: 'Warrior'
-      }
-    ]
-    const { toggleSideMenu } = this.props
     return (
       <ScrollView keyboardShouldPersistTaps style={styles.mainContainer}>
         <View style={styles.headerContainer}>
           <Icon color='white' name='code' size={62} />
           <Text style={styles.heading}>Query</Text>
         </View>
-
+        <SearchBar
+          round
+          lightTheme
+          onChangeText={this.serach}
+          placeholder='Type Here...' />
         <Button
           buttonStyle={[{marginBottom: 15, marginTop: 15}]}
           icon={{name: 'search'}}
@@ -63,7 +65,7 @@ styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: colors.secondary
+    backgroundColor: '#aad450'
   },
   titleContainer: {
   },

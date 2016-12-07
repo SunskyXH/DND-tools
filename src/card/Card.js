@@ -14,7 +14,7 @@ import {
 
 let styles = {}
 
-class Home extends Component {
+class Card extends Component {
   render () {
     const list = [
       {
@@ -32,14 +32,34 @@ class Home extends Component {
         icon: 'filter-tilt-shift',
         subtitle: 'Warlock',
         level: '1'
+      },
+      {
+        name: '香香鸡哲学形态',
+        icon: 'spa',
+        subtitle: 'Monk',
+        level: '5'
+      },{
+        name: '香香鸡神圣形态',
+        icon: 'details',
+        subtitle: 'Priest',
+        level: '2'
+      },{
+        name: '香香鸡敏捷形态',
+        icon: 'adb',
+        subtitle: 'Rouge',
+        level: '1'
+      },{
+        name: '香香鸡智慧形态',
+        icon: 'whatshot',
+        subtitle: 'Mage',
+        level: '5'
       }
     ]
-    const { toggleSideMenu } = this.props
     return (
       <ScrollView style={styles.mainContainer}>
         <View style={styles.hero}>
           <Icon color='white' name='change-history' size={62} />
-          <Text style={styles.heading}>Card</Text>
+          <Text style={styles.heading}>Build & View Your Cards</Text>
         </View>
         <List>
           {
@@ -99,4 +119,4 @@ styles = StyleSheet.create({
   }
 })
 
-export default Home
+export default Card

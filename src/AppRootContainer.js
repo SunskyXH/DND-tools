@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import App from './App'
 import {
   List,
@@ -25,10 +25,19 @@ class AppRootContainer extends Component {
       {
         name: 'Setting',
         icon: 'settings'
+      },
+      {
+        name: 'Help us',
+        icon: 'code'
+      },
+      {
+        name: 'About',
+        icon: 'bubble-chart'
       }
     ]
     const MenuComponent = (
-      <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50}}>
+      <View style={{flex: 1, backgroundColor: '#ffffff', paddingTop: 50}}>
+        <Text>DNDtools</Text>
         <List containerStyle={{marginBottom: 20}}>
         {
           list.map((l, i) => (
@@ -45,7 +54,7 @@ class AppRootContainer extends Component {
     )
     return (
       <SideMenu
-        toggledContainerStyle={{borderLeftWidth: 1, borderLeftColor: '#ededed'}}
+        toggledContainerStyle={{borderLeftWidth: 1, borderLeftColor: '#ffffff'}}
         toggled={this.state.toggled}
         MenuComponent={MenuComponent}>
         <App toggleSideMenu={this.toggleSideMenu} />

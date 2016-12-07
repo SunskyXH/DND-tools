@@ -2,14 +2,30 @@
  * @providesModule HSNavTitleComponent
  */
 
-import React from 'react'
-import { View } from 'react-native'
+import React, { Component } from 'react'
+import { View, StyleSheet } from 'react-native'
 import { Text } from 'react-native-elements'
 
-const NavTitleComponent = () => (
-  <View>
-    <Text>Hello from Nav</Text>
-  </View>
-)
 
+class NavTitleComponent extends Component {
+  constructor () {
+    super()
+  }
+  render () {
+    const { title } = this.props
+    return(
+      <View>
+        <Text style={styles.heading}>{ title }</Text>
+      </View>
+    )
+  }
+}
+
+styles = StyleSheet.create({
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22
+  }
+})
 export default NavTitleComponent

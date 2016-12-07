@@ -10,13 +10,10 @@ import colors from 'HSColors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 let styles = {}
-
-const NavigationBar = (toggleSideMenu) => {
+const NavigationBar = (toggleSideMenu, backgroundColor) => {
   const src = require('image!logo')
+  console.warn(toggleSideMenu)
   const LeftButton = (route, navigator, index, navState) => {
-    if (route.name !== 'home') {
-      return null
-    }
     if (index > 0) {
       const leftAction = navigator.pop
       const leftIcon = 'chevron-left'
@@ -39,22 +36,19 @@ const NavigationBar = (toggleSideMenu) => {
       </TouchableHighlight>
     )
   }
-
   const RightButton = (/* route, navigator, index, navState */) => {
     return null
   }
-
   const Title = (route, navigator, index, navState) => {
-    if (route.title) {
+    if (route.name) {
       return (
-        <NavTitleComponent title={route.title} />
+        <NavTitleComponent title={route.name} />
       )
     }
     return (
       <NavTitleIcon src={src} />
     )
   }
-
   return (
     <Navigator.NavigationBar
       routeMapper={{
@@ -62,7 +56,9 @@ const NavigationBar = (toggleSideMenu) => {
         RightButton,
         Title
       }}
-      style={styles.navBar}
+      style={[styles.navBar,
+      backgroundColor && {backgroundColor: backgroundColor}
+    ]}
     />
   )
 }
@@ -70,7 +66,7 @@ const NavigationBar = (toggleSideMenu) => {
 styles = StyleSheet.create({
   navBar: {
     height: 65,
-    backgroundColor: colors.grey1,
+    backgroundColor: colors.primary2,
     ...Platform.select({
       android: {
         height: 55
