@@ -29,7 +29,7 @@ class Query extends Component {
     ]
     const { toggleSideMenu } = this.props
     return (
-      <ScrollView style={{backgroundColor: 'white'}}>
+      <ScrollView keyboardShouldPersistTaps style={styles.mainContainer}>
         <View style={styles.headerContainer}>
           <Icon color='white' name='code' size={62} />
           <Text style={styles.heading}>Query</Text>
@@ -37,15 +37,18 @@ class Query extends Component {
 
         <Button
           buttonStyle={[{marginBottom: 15, marginTop: 15}]}
-          icon={{name: 'code'}}
-          backgroundColor={socialColors.twitter}
-          title='Serach' />
+          icon={{name: 'search'}}
+          backgroundColor={socialColors.stumbleupon}
+          title='Search' />
       </ScrollView>
     )
   }
 }
 
 styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#ebedf1'
+  },
   container: {
     flex: 1,
     margin: 15

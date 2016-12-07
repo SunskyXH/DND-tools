@@ -14,32 +14,20 @@ import {
 
 let styles = {}
 
-class Home extends Component {
+class More extends Component {
   render () {
     const list = [
       {
-        name: '香香鸡本体',
-        icon: 'flare',
-        subtitle: 'Paladin',
-        level: '5'
-      },{
-        name: '香香鸡猛男形态',
-        icon: 'polymer',
-        subtitle: 'Warrior',
-        level: '2'
-      },{
-        name: '香香鸡法术形态',
-        icon: 'filter-tilt-shift',
-        subtitle: 'Warlock',
-        level: '1'
+        name: 'Dice',
+        icon: 'grain'
       }
     ]
     const { toggleSideMenu } = this.props
     return (
       <ScrollView style={styles.mainContainer}>
-        <View style={styles.hero}>
-          <Icon color='white' name='change-history' size={62} />
-          <Text style={styles.heading}>Card</Text>
+        <View style={styles.headingContainer}>
+          <Icon color='white' name='looks' size={62} />
+          <Text style={styles.heading}>More Tools</Text>
         </View>
         <List>
           {
@@ -47,17 +35,12 @@ class Home extends Component {
               <ListItem
                 key={i}
                 title={item.name}
-                subtitle = {item.subtitle+' '+'Lv'+item.level}
+                subtitle = {item.subtitle}
                 leftIcon={{name: item.icon}}
               />
             ))
           }
         </List>
-        <Button
-          buttonStyle={[{marginBottom: 15, marginTop: 15}]}
-          icon={{name: 'add'}}
-          backgroundColor={socialColors.vimeo}
-          title='Build a Card' />
       </ScrollView>
     )
   }
@@ -76,12 +59,12 @@ styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 22
   },
-  hero: {
+  headingContainer: {
     marginTop: 60,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: colors.primary2
+    backgroundColor: colors.secondary2
   },
   titleContainer: {
   },
@@ -99,4 +82,4 @@ styles = StyleSheet.create({
   }
 })
 
-export default Home
+export default More
