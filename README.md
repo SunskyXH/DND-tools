@@ -6,20 +6,28 @@ A mini tool for DND TRPG.It can help you build a card,query some data,or just ro
 ## not finished yet
 developed by AFAC OF UESTC
 
----
 
-### usage
+## usage
 
+1.clone project
 ```bash
-#1.clone project
 git clone https://github.com/SunskyXH/DND-tools.git <your project name>
-#2.install dependencies
+```
+
+2.install dependencies
+```bash
 cd <your project name> && npm i
-#3.link dependencies for react-native
+```
+
+3.link dependencies for react-native
+```bash
 react-native link
-#4.run project
+```
+
+4.run project
+```bash
 #Android
-react-native run-android 
+react-native run-android
 #iOS
 react-native run-ios
 ```
