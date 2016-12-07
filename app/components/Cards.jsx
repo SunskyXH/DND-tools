@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavBar, Card, WingBlank, WhiteSpace, Icon } from 'antd-mobile';
 import { browserHistory } from 'react-router';
+
+
 const cards = [
   {
     "name": "皮皮猪",
@@ -53,7 +55,7 @@ export default class Cards extends React.Component {
               <WhiteSpace size="lg" />
             </div>
           )}
-        
+
       </div>
 
     )
