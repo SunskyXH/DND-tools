@@ -12,7 +12,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 let styles = {}
 const NavigationBar = (toggleSideMenu, backgroundColor) => {
   const src = require('image!logo')
-  console.warn(toggleSideMenu)
   const LeftButton = (route, navigator, index, navState) => {
     if (index > 0) {
       const leftAction = navigator.pop
@@ -42,7 +41,7 @@ const NavigationBar = (toggleSideMenu, backgroundColor) => {
   const Title = (route, navigator, index, navState) => {
     if (route.name) {
       return (
-        <NavTitleComponent title={route.name} />
+        <NavTitleComponent/>
       )
     }
     return (

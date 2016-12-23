@@ -49,7 +49,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='code' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='code' size={26} />}
           onPress={() => this.changeTab('query')}>
-          <Query toggleSideMenu={toggleSideMenu} backgroundColor={'#dd4b39'} />
+          <Query toggleSideMenu={toggleSideMenu} backgroundColor={ socialColors.vimeo } />
         </Tab>
         <Tab
           titleStyle={[styles.titleStyle]}
@@ -59,7 +59,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='looks' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='looks' size={26} />}
           onPress={() => this.changeTab('more')}>
-          <More toggleSideMenu={toggleSideMenu} backgroundColor={ socialColors.vimeo} />
+          <More toggleSideMenu={toggleSideMenu} backgroundColor={ '#dd4b39' } />
         </Tab>
       </Tabs>
     )

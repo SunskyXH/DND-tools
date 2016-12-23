@@ -59,7 +59,7 @@ class Card extends Component {
       <ScrollView style={styles.mainContainer}>
         <View style={styles.hero}>
           <Icon color='white' name='change-history' size={62} />
-          <Text style={styles.heading}>Build & View Your Cards</Text>
+          <Text style={styles.heading}>Cards</Text>
         </View>
         <List>
           {
@@ -67,7 +67,7 @@ class Card extends Component {
               <ListItem
                 key={i}
                 title={item.name}
-                subtitle = {item.subtitle+' '+'Lv'+item.level}
+                subtitle = {'Lv'+item.level+'/'+item.subtitle+' '}
                 leftIcon={{name: item.icon}}
               />
             ))
