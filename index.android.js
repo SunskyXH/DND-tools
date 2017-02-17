@@ -6,12 +6,12 @@
 
 import React, { Component } from 'react'
 import { AppRegistry } from 'react-native'
-import AppRootContianer from './src/AppRootContianer'
+import AppRootContainer from './src/AppRootContainer'
 
 export default class DNDtools_rn extends Component {
   render() {
     return (
-      <AppRootContianer />
+      <AppRootContainer />
     );
   }
 }
