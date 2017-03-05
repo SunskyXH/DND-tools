@@ -17,20 +17,38 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      selectedTab: 'Card'
+      selectedTab: 'Card',
+      hideTabBar: false,
     }
     this.changeTab = this.changeTab.bind(this)
+    this.hideTabBar = this.hideTabBar.bind(this)
   }
+
   changeTab (selectedTab) {
     this.setState({
       selectedTab
     })
   }
+
+  hideTabBar(value) {
+    this.setState({
+      hideTabBar: value,
+    })
+  }
+
+  
   render () {
+    let tabBarStyle = {};
+    let sceneStyle = {};
+    if (this.state.hideTabBar) {
+      tabBarStyle.height = 0;
+      tabBarStyle.overflow = 'hidden';
+      sceneStyle.paddingBottom = 0;
+    }
     const { toggleSideMenu } = this.props
     const { selectedTab } = this.state
     return (
-      <Tabs hidesTabTouch>
+      <Tabs hidesTabTouch tabBarStyle={tabBarStyle} sceneStyle={sceneStyle}>
         <Tab
           titleStyle={[styles.titleStyle]}
           selectedTitleStyle={[styles.titleSelected, {marginTop: -3, marginBottom: 7}]}
@@ -39,7 +57,7 @@ class App extends Component {
           renderIcon={() => <Icon color={colors.grey2} name='change-history' size={26} />}
           renderSelectedIcon={() => <Icon color={colors.primary} name='change-history' size={26} />}
           onPress={() => this.changeTab('Card')}>
-          <Card toggleSideMenu={toggleSideMenu} backgroundColor={ colors.primary2 } />
+          <Card toggleSideMenu={toggleSideMenu} backgroundColor={ colors.primary2 } hideTabBar={this.hideTabBar.bind(this)}/>
         </Tab>
         <Tab
           titleStyle={[styles.titleStyle]}

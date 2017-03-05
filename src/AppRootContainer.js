@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import App from './App'
 import {
   List,
@@ -11,16 +11,18 @@ class AppRootContainer extends Component {
   constructor () {
     super()
     this.state = {
-      toggled: false
+      isOpen: false
     }
     this.toggleSideMenu = this.toggleSideMenu.bind(this)
   }
   toggleSideMenu () {
+    console.log('!!!!!!!!!!!')
     this.setState({
-      toggled: !this.state.toggled
+      isOpen: !this.state.isOpen
     })
   }
   render () {
+    const src = require('./images/logo.png')
     const list = [
       {
         name: 'Setting',
@@ -31,33 +33,36 @@ class AppRootContainer extends Component {
         icon: 'code'
       },
       {
-        name: 'About',
+        name: 'Feedback',
         icon: 'bubble-chart'
       }
     ]
     const MenuComponent = (
-      <View style={{flex: 1, backgroundColor: '#ffffff', paddingTop: 50}}>
-        <Text>DNDtools</Text>
+      <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 30}}>
+        <View style={{backgroundColor: 'darkgrey', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', padding: 10,}}>
+          <Image
+            source={src}
+            style={styles.logo} />
+        </View>
         <List containerStyle={{marginBottom: 20}}>
-        {
-          list.map((l, i) => (
-            <ListItem
-              onPress={() => console.log('something')}
-              key={i}
-              title={l.name}
-              leftIcon={{name: l.icon}}
-            />
-          ))
-        }
+          {
+            list.map((l, i) => (
+              <ListItem
+                onPress={() => console.log('something')}
+                key={i}
+                title={l.name}
+                leftIcon={{name: l.icon}}
+              />
+            ))
+          }
         </List>
       </View>
     )
     return (
       <SideMenu
-        toggledContainerStyle={{borderLeftWidth: 1, borderLeftColor: '#ffffff'}}
-        toggled={this.state.toggled}
-        MenuComponent={MenuComponent}>
-        <App toggleSideMenu={this.toggleSideMenu} />
+        isOpen={this.state.isOpen}
+        menu={MenuComponent}>
+        <App toggleSideMenu={this.toggleSideMenu.bind(this)} />
       </SideMenu>
     )
   }

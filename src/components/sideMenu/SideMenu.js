@@ -36,7 +36,7 @@ class SideMenu extends Component {
         </View>
         <Animated.View
           style={[styles.appView,
-            { marginLeft: this.AnimatedLeft },
+              { marginLeft: this.AnimatedLeft },
             this.state.toggled && { borderLeftWidth: 1, borderLeftColor: '#d5d5d5' }
           ]}>
           {children}
@@ -65,7 +65,6 @@ styles = StyleSheet.create({
     backgroundColor: '#898989',
     flex: 1,
     position: 'absolute',
-    height
   }
 })
 

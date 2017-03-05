@@ -1,3 +1,4 @@
+
 import CardNav from './CardNav'
 
 import { connect } from 'react-redux'
@@ -9,6 +10,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {}
 }
+
+
 
 // export default connect(mapStateToProps, mapDispatchToProps)(CardNav)
 export default CardNav

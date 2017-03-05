@@ -4,19 +4,50 @@ import colors from 'HSColors'
 import socialColors from 'HSSocialColors'
 import fonts from 'HSFonts'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-
+import CardDetail from './CardDetail'
+import BuildCard from './BuildCard'
 import {
   Text,
   Button,
   List,
-  ListItem
+  ListItem,
 } from 'react-native-elements'
+
+
 
 let styles = {}
 
 class Card extends Component {
+
+  constructor() {
+    super()
+    this.handleItemPress = this.handleItemPress.bind(this)
+    this.handleBuildCardPress = this.handleBuildCardPress.bind(this)
+  }
+
+
+  handleItemPress() {
+    const { navigator } = this.props
+    if(navigator) {
+      navigator.push({
+        name: 'CardDetail',
+        component: CardDetail
+      })
+    }
+  }
+
+  handleBuildCardPress(){
+    const { navigator } = this.props
+    if(navigator) {
+      navigator.push({
+        name: 'BuildCard',
+        component: BuildCard
+      })
+    }
+  }
+
   render () {
-    const list = [
+  const list = [
       {
         name: '香香鸡本体',
         icon: 'flare',
@@ -69,6 +100,7 @@ class Card extends Component {
                 title={item.name}
                 subtitle = {'Lv'+item.level+'/'+item.subtitle+' '}
                 leftIcon={{name: item.icon}}
+                onPress={this.handleItemPress}
               />
             ))
           }
@@ -77,7 +109,8 @@ class Card extends Component {
           buttonStyle={[{marginBottom: 15, marginTop: 15}]}
           icon={{name: 'add'}}
           backgroundColor={socialColors.vimeo}
-          title='Build a Card' />
+          title='Build a Card'
+          onPress={this.handleBuildCardPress}/>
       </ScrollView>
     )
   }

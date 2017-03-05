@@ -11,9 +11,12 @@ class CardNav extends Component {
     this.renderScene = this.renderScene.bind(this)
   }
   renderScene (route, navigator) {
-    const { toggleSideMenu} = this.props
+    const { toggleSideMenu } = this.props
     return (
-      <route.component toggleSideMenu={toggleSideMenu} navigator={navigator} {...route.passProps} />
+      <route.component
+        toggleSideMenu={toggleSideMenu}
+        navigator={navigator}
+        {...route.passProps} />
     )
   }
   render () {
