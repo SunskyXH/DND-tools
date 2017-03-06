@@ -12,7 +12,7 @@ import {
   ListItem
 } from 'react-native-elements'
 
-let style = {}
+let styles = {}
 
 class CardDeatil extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class CardDeatil extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 30}}>
+      <ScrollView style={styles.mainContainer}>
         <List containerStyle={{marginBottom: 20}}>
           <ListItem
             onPress={() => console.log('something')}
@@ -58,15 +58,17 @@ class CardDeatil extends Component {
             title={'香香鸡'}
           />
         </List>
-      </View>
+      </ScrollView>
     )
   }
 }
 
 styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: '#000000',
+    backgroundColor: '#ebedf1',
     flex: 1,
+    paddingTop: 30,
+    marginTop: 30,
   },
 })
 export default CardDeatil

@@ -34,6 +34,7 @@
 		C0D28A6E1DF7ACF600F7A561 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C02BBCB41DF7957E0086A0BE /* libRNVectorIcons.a */; };
 		C1202E3EFDD344F681A36051 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D54A8EBB80A2429691936114 /* Ionicons.ttf */; };
 		EC7FD5FE685D4532BA6B07BC /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3D098BB56E4D259A74EDCB /* libRCTAnimation.a */; };
+		F2B6E41AF070459CA1799F8C /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB3E182697848638043E8E0 /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		7BC922749B4949A287F2805D /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		AC3D098BB56E4D259A74EDCB /* libRCTAnimation.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTAnimation.a; sourceTree = "<group>"; };
+		ACB3E182697848638043E8E0 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		AE90804BB2B745CD9B24A726 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		C023F2991E6C8D5E0013FC70 /* DNDtools_rn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = DNDtools_rn.entitlements; path = DNDtools_rn/DNDtools_rn.entitlements; sourceTree = "<group>"; };
 		CA87DF64A20B4F708B09A04B /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				16F65440F54E4E2FA8B659D0 /* Octicons.ttf */,
 				AE90804BB2B745CD9B24A726 /* SimpleLineIcons.ttf */,
 				52179E9A04C246EF8B114910 /* Zocial.ttf */,
+				ACB3E182697848638043E8E0 /* MaterialCommunityIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -504,7 +507,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -745,6 +748,7 @@
 				09ACCEB0B7F74E0A8027F57C /* Octicons.ttf in Resources */,
 				BC0C10D506504629AA84FD0D /* SimpleLineIcons.ttf in Resources */,
 				94DDCBBFBCAF420CACAE5F3F /* Zocial.ttf in Resources */,
+				F2B6E41AF070459CA1799F8C /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,7 +857,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DNDtools_rn/DNDtools_rn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -883,7 +886,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DNDtools_rn/DNDtools_rn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S5M8G4MP58;

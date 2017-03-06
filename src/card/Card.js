@@ -11,6 +11,7 @@ import {
   Button,
   List,
   ListItem,
+  SocialIcon,
 } from 'react-native-elements'
 
 
@@ -106,6 +107,7 @@ class Card extends Component {
           }
         </List>
         <Button
+          raised
           buttonStyle={[{marginBottom: 15, marginTop: 15}]}
           icon={{name: 'add'}}
           backgroundColor={socialColors.vimeo}
